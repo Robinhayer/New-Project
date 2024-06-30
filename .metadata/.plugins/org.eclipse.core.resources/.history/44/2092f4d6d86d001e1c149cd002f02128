@@ -1,0 +1,43 @@
+package node_and_hub;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class Test1 {
+	WebDriver driver;
+	@Test(priority=1)
+	void setup()
+	{
+		driver=new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+	}
+
+	@Test(priority=2)
+	void run() throws InterruptedException
+	{
+		driver.get("http://localhost/opencart/upload/");
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.findElement(By.xpath("//span[normalize-space()='My Account']")).click();
+		driver.findElement(By.xpath("//a[normalize-space()='Login']")).click();
+		driver.findElement(By.xpath("//input[@id='input-email']")).sendKeys("robinhayer09@Gmail.com");
+		driver.findElement(By.xpath("//input[@id='input-password']")).sendKeys("test123");
+		driver.wait(5000);
+		driver.findElement(By.xpath("//button[normalize-space()='Login']")).click();
+		String myacct=driver.findElement(By.xpath("//h2[normalize-space()='My Account']")).getText();
+		if(myacct.contains("My Account"))
+		{
+			System.out.println("Test Passed");
+		}
+		else
+		{
+			System.out.println("test failed");
+		}
+		driver.quit();
+	}
+}

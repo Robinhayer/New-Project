@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;day36.DataProvider.java&apos; to &apos;DataProviders.java&apos;&#x0D;&#x0A;- Original project: &apos;Selenium_Training&apos;&#x0D;&#x0A;- Original element: &apos;day36.DataProvider.java&apos;&#x0D;&#x0A;- Renamed element: &apos;day36.DataProviders.java&apos;" description="Rename compilation unit &apos;DataProvider.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;day36{DataProvider.java" name="DataProviders.java" references="false" stamp="1713242867839" version="1.0"/>
+</session>

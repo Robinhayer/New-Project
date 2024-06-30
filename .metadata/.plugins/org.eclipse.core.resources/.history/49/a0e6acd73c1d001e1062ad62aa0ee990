@@ -1,0 +1,13 @@
+package day12;
+
+public class DataConversion {
+
+	public static void main(String[] args) 
+	{
+		String s="23";
+		String s1="45";
+		System.out.println(s1+s);
+	
+	}
+
+}

@@ -1,0 +1,57 @@
+package testCases;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.github.javafaker.Faker;
+
+import pageObjects.AccontRegistrationPage;
+
+import pageObjects.HomePage;
+import pageObjects.SignupPage;
+import testBase.BaseClass;
+
+public class AccountRegistrationT0001 extends BaseClass 
+{ Faker faker=new Faker();
+
+
+ 
+  @Test
+  void CheckHomePageLogo()
+  {
+	  HomePage hp=new HomePage(driver);
+	  hp.CheckLogoPrescence();
+	  Thread.sleep(20000);
+  }
+  @Test
+  void CreateAccount() throws InterruptedException
+  {
+  
+	  SignupPage sp=new SignupPage(driver);
+	  AccontRegistrationPage ap=new AccontRegistrationPage(driver);
+	  ap.ClickLogin_Signup();
+	  ap.setSignupName(faker.name().firstName());
+	  ap.setSignupEmail(faker.internet().emailAddress());
+	  ap.ClickSignup();
+	  sp.SelectMaleGender();
+	  sp.SetPassword(faker.internet().password());
+	  sp.SetDate("23");
+	  sp.SetMonth("May");
+	  sp.SetYear("2005");
+	  sp.EnterFirstName(faker.name().firstName());
+	  sp.EnterLastName(faker.name().lastName());
+	  sp.EnterCompany("Docomo");
+	  sp.EnterAddress("Batala,Punjab,india");
+	  sp.EnterAddress2("Kotla");
+	  sp.SelectCountry("Canada");
+	  sp.SelectState("Punjab");
+	  sp.SelectCity("Batala");
+	  sp.EnterZipCode("143505");
+	  sp.EnterNumber("521536");
+	  sp.ClickCreateAccount();
+	  sp.AccountCreatedSuccessfully();
+	  Assert.assertTrue(true);
+	 
+
+  }
+}

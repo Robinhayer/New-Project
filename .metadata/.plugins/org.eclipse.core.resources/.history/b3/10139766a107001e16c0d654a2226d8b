@@ -1,0 +1,15 @@
+package day2;
+
+public class TerninaryOperators {
+
+	public static void main(String[] args)
+	{//int a=40, b=30;
+	//int x=a>b ? a: b;
+	//System.out.println(x);
+	
+	int age=18;
+	String x=age>=18? "person is eligible to vote": "person is not eligible to vote";
+	System.out.println(x);
+	}
+
+}

@@ -1,0 +1,12 @@
+package day12;
+
+public class WrapperClassDemo {
+
+	public static void main(String[] args) 
+	{
+	Integer a=20;
+	System.out.println(a.byteValue());
+
+	}
+
+}
